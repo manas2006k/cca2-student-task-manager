@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CCA 2 CI/CD — Student Task Manager
 
 A small Flask web application prepared as a learning starter for a Jenkins → Docker Hub → Kubernetes/Minikube pipeline.
@@ -133,3 +134,7 @@ GitHub checkout → dependencies and pytest → Docker build → push versioned 
 - [ ] Kubernetes Deployment and Service YAML
 - [ ] Screenshots
 - [ ] README/report explaining setup, stages, image push, app access and second run
+=======
+# cca2-student-task-manager
+Student Task Manager — CI/CD pipeline using Jenkins, Docker and Kubernetes
+>>>>>>> 45afb4c80237df8d55353f3237579df1dac13e1d
