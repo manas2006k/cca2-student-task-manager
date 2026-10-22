@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cca2-student-task-manager
+  labels:
+    app: cca2-student-task-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cca2-student-task-manager
+  template:
+    metadata:
+      labels:
+        app: cca2-student-task-manager
+    spec:
+      containers:
+        - name: student-task-manager
+          image: IMAGE_PLACEHOLDER
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
